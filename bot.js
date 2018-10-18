@@ -840,7 +840,7 @@ if(message.content.startsWith(prefix + 'ch')) {
 
 
 
-client.on ('message',async Sal => { // By : M3roof
+client.on('message',async Sal => { // By : M3roof
     let embed = new Discord.RichEmbed()
     if (Sal.content === "$id") {
       let embed = new Discord.RichEmbed()
