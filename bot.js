@@ -505,7 +505,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
                if(!message.channel.guild) return message.reply('** This command only for servers**');
          
   if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
-  if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
+  if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**ليس لدي صلاحية الحظر**");
   let user = message.mentions.users.first();
   
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
@@ -565,8 +565,8 @@ const prefix = "$";
   if (command == "kick") {
                if(!message.channel.guild) return;
          
-  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You Don't Have KICK_MEMBERS Permission").then(msg => msg.delete(5000));
-  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("I Don't Have KICK_Members Permission");
+  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("انت لا تملك الصلاحيات المطلوبه").then(msg => msg.delete(5000));
+  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("ليس لدي صلاحية طرد العضو");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
 
