@@ -159,7 +159,6 @@ client.on('message', function(msg) {
 
 
 
-const HeRo = new Discord.Client();
 client.on('message', message => {
 var prefix = "$";
 
