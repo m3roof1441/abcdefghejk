@@ -347,6 +347,10 @@ client.on('message', message => {
 .addField('     ** → اععطاء العضو باند ←  ** ' ,' **  $ban ** ')
 .addField('     ** → طرد العضو من السيرفر ←  ** ' ,' **  $kick ** ')
 .addField('     ** → مسح الشات ←  ** ' ,' **  $clear ** ')
+.addField('     ** → تقفيل الشات ←  ** ' ,' **  $close ** ')
+.addField('     ** → فتح الشات ←  ** ' ,' **  $open ** ')
+
+
 
 
 .setColor('RANDOM')
@@ -790,7 +794,7 @@ var prefix = "$"
 
 client.on('message', message => {
 var prefix = "$";
-       if(message.content === prefix + "قفل") {
+       if(message.content === prefix + "close") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -802,7 +806,7 @@ var prefix = "$";
               });
                 }
 
-    if(message.content === prefix + "فتح") {
+    if(message.content === prefix + "open") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
