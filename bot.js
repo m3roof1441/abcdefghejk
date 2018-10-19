@@ -858,9 +858,9 @@ client.on('message', message => {
                                 .setTitle('**New Ticket.**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
-                                .addField('Subject', args)
-                                .addField('Author', message.author)
-                                .addField('Channel', `<#${message.channel.id}>`);
+                                .addField('سبب التذكرة', args)
+                                .addField('اخرون', message.author)
+                                .addField('الروم', `<#${message.channel.id}>`);
 
                                 ticket.sendEmbed(embed);
                 }) .catch();
