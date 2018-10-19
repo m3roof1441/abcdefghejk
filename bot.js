@@ -711,9 +711,9 @@ client.on('message',  message => {
     var RpsEmbed = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setThumbnail(message.author.avatarURL)
-    .addField("Rock","🇷",true)
-    .addField("Paper","🇵",true)
-    .addField("Scissors","🇸",true)
+    .addField("حجر","🇷",true)
+    .addField("ورق","🇵",true)
+    .addField("مقص","🇸",true)
     message.channel.send(RpsEmbed).then(msg => {
         msg.react(' 🇷')
         msg.react("🇸")
