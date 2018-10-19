@@ -374,7 +374,6 @@ client.on('message', message => {
 .addField('     ** → حجر ورق مقص ←  ** ' ,' **  $rps ** ')
 .addField('     **─════════════ ⦁{✯اوامر الادارة✯}⦁ ════════════─** ' ,' **   ** ')
 .addField('     ** → اععطاء العضو باند ←  ** ' ,' **  $ban ** ')
-.addField('     ** → طرد العضو من السيرفر ←  ** ' ,' **  $kick ** ')
 .addField('     ** → مسح الشات ←  ** ' ,' **  $clear ** ')
 .addField('     ** → تقفيل الشات ←  ** ' ,' **  $close ** ')
 .addField('     ** → فتح الشات ←  ** ' ,' **  $open ** ')
@@ -585,41 +584,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
   
   
   
-  client.on('message', message => {
-const prefix = "$";
-  if (message.author.kick) return;
-  if (!message.content.startsWith(prefix)) return;
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-  if (command == "kick") {
-               if(!message.channel.guild) return;
-         
-  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("انت لا تملك الصلاحيات المطلوبه").then(msg => msg.delete(5000));
-  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("ليس لدي صلاحية طرد العضو");
-  let user = message.mentions.users.first();
-  let reason = message.content.split(" ").slice(2).join(" ");
-
-  if (message.mentions.users.size < 1) return message.reply("منشن شخص");
-  if(!reason) return message.reply ("اكتب سبب الطرد");
-  if (!message.guild.member(user)
-  .bannable) return message.reply("لايمكنني طرد شخص اعلى من رتبتي");
-
-  message.guild.member(user).kick(7, user);
-
-  const banembed = new Discord.RichEmbed()
-  .setAuthor('Kicked !', user.displayAvatarURL)
-  .setColor("RANDOM")
-  .setTimestamp()
-  .addField("User:",  `[ + ${user.tag} + ]`)
-  .addField("By:", `[  + ${message.author.tag} +  ]`)
-  .addField("Reason:", `[ + ${reason} +  ]`)
-  client.channels.get("آي دي روم اللوق").send({embed : banembed})
-}
-});
   
   
   
