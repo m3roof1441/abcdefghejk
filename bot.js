@@ -831,7 +831,30 @@ var prefix = "$";
 
 
 
+hero.on("message",async message => {
+  var one;
+  var two;
+  var three;
+  var aa;
+  var prefix = "$"
+  if(message.content.startsWith(prefix + "slots")) {
+      if(message.content.split(' ')[0] !== `${prefix}slots`) return;
+    var first = ["🍊", "🍇", "🍒", "🍎", "🍋"];
+    var second = ["🍊", "🍇", "🍒", "🍎", "🍋"];
+    var third = ["🍊", "🍇", "🍒", "🍎", "🍋"];
 
+    one = first[Math.floor(Math.random () * first.length) + 0];
+    two = second[Math.floor(Math.random() * second.length) + 0];
+    three = third[Math.floor(Math.random() * third.length) + 0];
+    if(one === two && two === three) {
+      aa = "لقد فزت";
+    } else {
+      aa = "لقد خسرت";
+    }
+
+    message.channel.send(`**${one} | ${two} | ${three}**\n\n\`${aa}\`\n${message.author}`);
+  }
+});
 
 
 
