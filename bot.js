@@ -829,7 +829,7 @@ client.on('message', message => {
         let support = message.guild.roles.find("name","Support Team");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
         if(!args) {
-            return message.channel.send('Please type a subject for the ticket.');
+            return message.channel.send('الرجاء كتابة سبب التذكرة');
         };
                 if(!support) {
                     return message.channel.send('**Please make sure that `Support Team` role exists and it\'s not duplicated.**');
@@ -839,7 +839,7 @@ client.on('message', message => {
             };
                 message.guild.createChannel(`ticket-${message.author.username}`, "text").then(ticket => {
                     message.delete()
-                        message.channel.send(`Your ticket has been created. [ ${ticket} ]`);
+                        message.channel.send(`تم انشاء تذكرتك. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
                     ticketsStation.setPosition(1);
                         ticket.overwritePermissions(message.guild.id, {
@@ -871,7 +871,7 @@ client.on('message', message => {
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("Do you really want to close this ticket? Repeat the command to make sure. You have 20 seconds.")
+                    .setAuthor("هل تريد فعلآ اغلاق التذكرة ؟.")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
 
