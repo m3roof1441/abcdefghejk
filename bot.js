@@ -312,6 +312,13 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 'فلسطين') {      
+    msg.react("🇵🇸")
+    msg.channel.send("🇵🇸")
+  }
+});
+
 
 
 
