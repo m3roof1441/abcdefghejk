@@ -855,7 +855,7 @@ client.on('message', message => {
                                     READ_MESSAGES: true
                                 });
                     let embed = new Discord.RichEmbed()
-                                .setTitle('**New Ticket.**')
+                                .setTitle('**تذكرة جديدة.**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
                                 .addField('سبب التذكرة', args)
