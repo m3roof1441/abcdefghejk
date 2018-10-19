@@ -706,14 +706,14 @@ client.on('message',  message => {
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
     let messageRPS = message.content.split(" ").slice(2).join(" ");
-    let arrayRPS = ['**# - حجر**','**# - ورق**','**# - مقص**'];
+    let arrayRPS = ['**# - Rock**','**# - Paper**','**# - Scissors**'];
     let result = `${arrayRPS[Math.floor(Math.random() * arrayRPS.length)]}`;
     var RpsEmbed = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setThumbnail(message.author.avatarURL)
-    .addField("حجر","🇷",true)
-    .addField("ورق","🇵",true)
-    .addField("مقص","🇸",true)
+    .addField("Rock","🇷",true)
+    .addField("Paper","🇵",true)
+    .addField("Scissors","🇸",true)
     message.channel.send(RpsEmbed).then(msg => {
         msg.react(' 🇷')
         msg.react("🇸")
