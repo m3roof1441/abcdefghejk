@@ -333,6 +333,14 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 'كعبة') {      
+    msg.react("🕋")
+    msg.channel.send("🕋")
+  }
+});
+
+
 
 
 
