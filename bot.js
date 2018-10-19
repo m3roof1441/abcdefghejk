@@ -819,6 +819,7 @@ var prefix = "$";
   
   
   
+
   
 
 
@@ -828,7 +829,14 @@ var prefix = "$";
 
 
 
+client.on('ebnklb',function(ebnklb) {
+    
+    if(ebnklb.content.startsWith("<@467782642549653514>")) {
+        ebnklb.channel.send(' **؟؟!**  A Nice Bot Developed By:`TG_Pro`')
+        ebnklb.channel.send(' `هلا`')
 
+    }
+});
 
 
 
