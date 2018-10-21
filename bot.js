@@ -859,7 +859,7 @@ client.on('message', message => {
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
                                 .addField('سبب التذكرة', args)
-                                .addField('اخرون', message.author)
+                                .addField('صاحب التكت', message.author)
                                 .addField('الروم', `<#${message.channel.id}>`);
 
                                 ticket.sendEmbed(embed);
@@ -919,6 +919,12 @@ var prefix = "$"
             message.channel.send(link);
         }
     });
+
+
+
+
+
+
 
 
 
