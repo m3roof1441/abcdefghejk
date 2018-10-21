@@ -938,8 +938,8 @@ var prefix = "$"
 
 
 client.on('message', msg => {
-  if (msg.content === '$ping') {
-   msg.reply('✅ سرعة استجابة البوت ');
+  if (msg.content === 'رابط') {
+   msg.reply('https://discord.gg/RKXqry4');
   }
 });
 
