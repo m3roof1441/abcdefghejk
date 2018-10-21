@@ -938,7 +938,7 @@ var prefix = "$"
 
 
 client.on('message', msg => {
-  if (msg.content === 'رابط') {
+  if (msg.content === 'link') {
    msg.reply('https://discord.gg/RKXqry4');
   }
 });
