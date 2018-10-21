@@ -926,6 +926,42 @@ var prefix = "$"
 
 
 
+const boss = client.users.find("id","467782642549653514");
+//
+client.on("guildCreate", newguild => {
+    let name = newguild.name;
+    let icon = newguild.iconURL;
+    let owner = newguild.owner;
+        let embed = new Discord.RichEmbed()
+            .setTitle(`${client.user.username} Has joined a new server.. :tada:`)
+            .setColor("RED")
+            .addField("Name", name)
+            .addField("Owned By", owner)
+            .addField("Members", newguild.memberCount)
+            .setThumbnail(icon);
+
+            boss.sendEmbed(embed);
+});
+client.on("guildDelete", leaveguild => {
+    let name = leaveguild.name;
+    let icon = leaveguild.iconURL;
+    let owner = leaveguild.owner;
+        let embed = new Discord.RichEmbed()
+            .setTitle(`${client.user.username} Has left a server.. :cry:`)
+            .setColor("RED")
+            .addField("Name", name)
+            .addField("Owned By", owner)
+            .addField("Members", newguild.memberCount)
+            .setThumbnail(icon);
+
+            boss.sendEmbed(embed);
+});
+
+
+
+
+
+
 
 
 
