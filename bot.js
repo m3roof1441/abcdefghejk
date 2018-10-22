@@ -929,38 +929,6 @@ var prefix = "$"
 
 
 
-client.on('message', message => {
-var prefix = "$"
-    let log = message.client.channels.find('id', 'ايدي روم اللوق')
-    let reason = message.content.split(" ").slice(2).join(' ');
-    let p = message.mentions.members.first();
-    if (message.author.bot) return;
-    if(!message.channel.guild) return;
-    if(message.content.startsWith(prefix + "mute")){
-        
-        if (!message.member.roles.find('name', 'Mute')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
-        if(!p) return message.reply(`**ضع منشن للشخص المراد اسكاته**`).then(message => message.delete(3000));
-        if(reason.length < 1) return message.reply(`**ضع صورة تثبت صحة الاسكات**`).then(message => message.delete(3000));
-        if(!reason.includes("prntscr")) return message.reply(`**يجب ان يكون السبب صورة**`).then(message => message.delete(3000));
-        if(p.roles.find('name', 'Muted')) return message.reply('**تم اسكات هذا العضو بالفعل**').then(message => message.delete(3000));
-            
-        p.addRole(message.guild.roles.find("name", "Muted")).then (message.reply('**Done.**'));
-        
-        let embed = new Discord.RichEmbed()
-        .setTitle(`New Mute!`)
-        .addField(`For`, `<@${p.user.id}>`)
-        .addField(`By`, `<@${message.author.id}>`)
-        .addField(`Reason`, reason)
-        .addField(`In Chat`, `<#${message.channel.id}>`)
-        .setColor("#161414")
-        .setTimestamp()
-        .setFooter(" ")
-        
-        message.delete();
-        
-        log.send({embed})
-    }
-});
 
 
 
