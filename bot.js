@@ -944,8 +944,8 @@ var prefix = "$"
 
 
 client.on('message', msg => {
-  if (msg.content === 'link') {
-   msg.reply('https://discord.gg/RKXqry4');
+  if (msg.content === '$ping') {
+   msg.reply('✅ سرعة استجابة البوت ');
   }
 });
 
