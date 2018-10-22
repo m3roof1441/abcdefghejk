@@ -964,6 +964,38 @@ return;
 
 
 
+client.on("message", (message) => {
+    if (message.content.startsWith("$kick")) {
+      if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('ليس لديك صلاحية');
+        var member= message.mentions.members.first();
+        member.kick().then((member) => {
+            message.channel.send(member.displayName + " مع السلامه :wave: ");
+        }).catch(() => {
+            message.channel.send("Error -_-");
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 client.on('message', msg => {
