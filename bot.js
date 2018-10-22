@@ -969,21 +969,6 @@ return;
 
 
 
-client.on('message', message => {
-  
-    if(message.content.split(' ')[0] == '$owner'){
-         if(!message.channel.guild) return;
-                            let args = message.content.split(' ').slice(1).join(' ');
-    
-    client.guilds.get("503704056355618836").members.get("467782642549653514").sendMessage(message.author.tag+"\n Message : "+args)
-    
-                                                    let embed = new Discord.RichEmbed()
-                                                    .setAuthor(message.author.username, message.author.avatarURL)
-                                                    .setDescription(':mailbox_with_mail: تم ارسال رسالة لصاحب البوت')
-                                                    .setThumbnail(message.author.avatarURL)
-                                                    .setFooter(message.author.username, message.author.avatarURL)
-                                                    message.channel.sendEmbed(embed);}
-                                                  });
 
 
 
