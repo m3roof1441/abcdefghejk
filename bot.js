@@ -378,6 +378,7 @@ client.on('message', message => {
 .addField('     ** → مسح الشات ←  ** ' ,' **  $clear ** ')
 .addField('     ** → تقفيل الشات ←  ** ' ,' **  $cl ** ')
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
+.addField('     ** → برودكاست ←  ** ' ,' **  bc ** ')
 
 
 
@@ -636,7 +637,7 @@ let v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("RED")
   v1.setDescription('***__ Collecting Data __***')
-  v1.setFooter("# | S Bot  |") 
+  v1.setFooter("# | TG_Pro  |") 
 let norelden = new Discord.RichEmbed()
 .setColor('#9b59b6')
 .setTimestamp(new Date())
@@ -763,20 +764,7 @@ client.on('guildDelete', guild => {
   
   
   
- client.on("message", message => {
-var prefix = "$"
 
-            if (message.content.startsWith(prefix + "bco")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
- m.send(`${argresult}\n ${m}`);
-})
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
- message.delete(); 
-};     
-}); 
   
   
   
@@ -939,7 +927,7 @@ client.on('message', message => {
     let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == prefix + 'bc') {
     if (!args[1]) {
-message.channel.send("**.bc <message>**");
+message.channel.send("**يرجأء كتابة شي**");
 return;
 }
         message.guild.members.forEach(m => {
