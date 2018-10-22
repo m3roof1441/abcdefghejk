@@ -930,6 +930,7 @@ var prefix = "$"
 
 
 client.on('message', message => {
+var prefix = "$"
     let log = message.client.channels.find('id', 'ايدي روم اللوق')
     let reason = message.content.split(" ").slice(2).join(' ');
     let p = message.mentions.members.first();
