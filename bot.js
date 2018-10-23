@@ -1073,7 +1073,7 @@ hours = 12;
   if(message.content.startsWith(prefix + "giveaway")) {
 
     if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
-    message.channel.send(`:eight_pointed_black_star:| **Send Name channel For the Giveaway**`).then(msg => {
+    message.channel.send(`:eight_pointed_black_star:| **ارسل اسم الروم الذي تريد ان يكون فيه القيف اواي**`).then(msg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
@@ -1089,10 +1089,10 @@ hours = 12;
             time: 20000,
             errors: ['time']
           }).then(collected => {
-            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
+            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **يجب علي الوقت ان يكون ارقم `` اعد كتابة الامر``**');
             duration = collected.first().content * 60000;
             collected.first().delete();
-            msg.edit(':eight_pointed_black_star:| **Now send The Present **').then(msg => {
+            msg.edit(':eight_pointed_black_star:| **الان يرسل للروم **').then(msg => {
               message.channel.awaitMessages(filter, {
                 max: 1,
                 time: 20000,
@@ -1122,7 +1122,7 @@ hours = 12;
                      },duration);
                    });
                 } catch(e) {
-                message.channel.send(`:heavy_multiplication_x:| **i Don't Have Prem**`);
+                message.channel.send(`:heavy_multiplication_x:| **ليس لدي برمشن**`);
                   console.log(e);
                 }
               });
