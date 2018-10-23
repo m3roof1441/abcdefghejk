@@ -379,7 +379,8 @@ client.on('message', message => {
 .addField('     ** → مسح الشات ←  ** ' ,' **  $clear ** ')
 .addField('     ** → تقفيل الشات ←  ** ' ,' **  $cl ** ')
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
-.addField('     ** → برودكاست ←  ** ' ,' **  bc ** ')
+.addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
+.addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
 
 
 
