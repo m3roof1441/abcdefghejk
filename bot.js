@@ -997,14 +997,43 @@ channel.send({embed : embed});
 
 
 
+client.on('message', message => {
+var prefix = "$"
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('bcb')){
+ if (message.author.id !== 'ايديك') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if(!message.author.id === 'ايديك') return;
+message.channel.sendMessage('جار ارسال الرسالة |✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
 
 
 
 
 
 
+client.on('message', message => {
+    let prefix = '$';
+    
+    if(message.content.startsWith(prefix + 'getid')) {
+        let mentionned = message.mentions.users.first();
+            if(mentionned) {
+                var c = mentionned;
+            } else {
+                var c = message.author;
+            }
+                let embed = new Discord.RichEmbed()
+                    .setColor("RANDOM")
+                    .setTitle(`**[ ${c.id} ]**`);
 
+                    message.channel.sendEmbed(embed);
 
+    }
+});
 
 
 
