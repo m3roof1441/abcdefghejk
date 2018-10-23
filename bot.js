@@ -368,6 +368,7 @@ client.on('message', message => {
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
 .addField('     **→ صأنع البوت ← ** ' ,' **  $bot-owner ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **  $hypixel  ** ')
+.addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
 .addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' **   ** ')
 .addField('     **→ انجازات ماين كرافت ←  ** ' ,' **  $angaz ** ')
 .addField('     ** → كتابة كلام مثل كلايد بوت ←  ** ' ,' **  $s ** ')
@@ -1002,7 +1003,7 @@ var prefix = "$"
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('bcb')){
- if (message.author.id !== 'ايديك') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if (message.author.id !== '467782642549653514') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
  if(!message.author.id === 'ايديك') return;
 message.channel.sendMessage('جار ارسال الرسالة |✅')
 client.users.forEach(m =>{
