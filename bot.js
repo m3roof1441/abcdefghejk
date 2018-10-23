@@ -1033,6 +1033,7 @@ client.on('message', message => {
 client.on("ready", () => {
   function lol() {
     client.guilds.get('501459185423220804').roles.find("name", "Rainbow").setColor("RANDOM");
+    client.guilds.get('501459185423220804').roles.find("name", "⦁Fox_inviter⦁").setColor("RANDOM");
   };
   setInterval(lol, 10000);
 });
@@ -1084,7 +1085,7 @@ hours = 12;
         if(!room) return message.channel.send(':heavy_multiplication_x:| **i Found It :(**');
         room = collected.first().content;
         collected.first().delete();
-        msg.edit(':eight_pointed_black_star:| **Time For The Giveaway**').then(msg => {
+        msg.edit(':eight_pointed_black_star:| **الوقت للقيف اواي**').then(msg => {
           message.channel.awaitMessages(filter, {
             max: 1,
             time: 20000,
