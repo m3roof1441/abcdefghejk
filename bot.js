@@ -1182,13 +1182,6 @@ client.on('message',message =>{
 
 
 
-const Token = "`\`\` التوكن `\`\`"
-client.on('message' , message => {
-if (message.author.bot) return;
-           if (message.content == 'tt')
-           if (message.author.id === '467782642549653514'){
-if (!message.channel.guild) return;
-message.author.send(Token)
 
 
 
