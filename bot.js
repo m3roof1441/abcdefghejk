@@ -369,6 +369,7 @@ client.on('message', message => {
 .addField('     **→ صأنع البوت ← ** ' ,' **  $bot-owner ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **  $hypixel  ** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
+.addField('     **→ توب انفايت يوريك كم جبت من رابط ← ** ' ,' **  $top  ** ')
 .addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' **   ** ')
 .addField('     **→ انجازات ماين كرافت ←  ** ' ,' **  $angaz ** ')
 .addField('     ** → كتابة كلام مثل كلايد بوت ←  ** ' ,' **  $s ** ')
@@ -1186,6 +1187,48 @@ client.on('guildMemberAdd', member => {
   }); 
 });
 
+
+
+
+
+
+
+client.on('message' , message => {
+  var prefix = "$";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "send")) {
+    let args = message.content.split(" ").slice(1);
+
+
+    let suggestmessage = args.join(" ").slice(22);
+    let suggestchannel = message.mentions.channels.first();
+
+    if (!suggestchannel) {
+        return message.reply("منشن الروم")
+    }
+
+    if (!suggestmessage) {
+        return message.reply("يرجأء كتبت رساله")
+    
+         
+    }
+     message.delete();
+suggestchannel.send("@everyone  `||` @here ");
+    let embed = new Discord.RichEmbed()
+        .addField("**", `${suggestmessage}`)
+        .setFooter(`by ${message.author.tag}`)
+        .setTimestamp()
+    suggestchannel.send({
+        embed
+    }).then(msg => {
+        msg.react("✅").then(r => msg.react("❎"))
+    });
+
+
+    message.reply(`تم ارسال رسالتك بنجاح.`).then(msg => msg.delete(1000));
+    return;
+}
+});
 
 
 
