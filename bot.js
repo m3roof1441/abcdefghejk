@@ -381,8 +381,13 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
-      msg.channel.send({embed:embed});
-  .addField(" تـم الارسال :white_check_mark:")
+  }).then(messages => message.channel.bulkDelete(messages));
+    title: "``✏️✅ تم الارسال ``",
+    color: 0x06DF00,
+    footer: {
+    
+    }
+    }}).then(msg => {msg.delete(3000)});
 
 
 
