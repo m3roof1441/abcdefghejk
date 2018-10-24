@@ -381,7 +381,6 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
-  }).then(messages => message.channel.bulkDelete(messages));
     title: "``✏️✅ تم الارسال ``",
     color: 0x06DF00,
     footer: {
