@@ -25,22 +25,21 @@ client.on('message' , message => {
 
 client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='$members')
-      var kayan = new Discord.RichEmbed()
+      if(message.content =='$member')
+      var IzRo = new Discord.RichEmbed() 
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('| ~![ حألة الاعضاء ]~!')
+      .setTitle('ًںŒ·| Members info')  
       .addBlankField(true)
-      .addField('| Online',
-      `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
-      .addField('| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
-      .addField('| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
-      .addField('| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('| Server Members',`${message.guild.memberCount}`)
-      message.channel.send(kayan);
+      .addField('ًں“—| Online',  
+      `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)  
+      .addField('ًں“•| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`) 
+      .addField('ًں“™| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`) 
+      .addField('ًں““| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`) 
+      .addField('â‍،| Server Members',`${message.guild.memberCount}`) 
+      message.channel.send(IzRo);
     
     });
-
 
 
 
@@ -1100,16 +1099,7 @@ hours = 12;
 
 
 
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "welcome");
-     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-   //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  }); 
-});
+
 
 
 
@@ -1192,6 +1182,11 @@ client.on('message', message => {
     })
     }
     });
+
+
+
+
+
 
 
 
