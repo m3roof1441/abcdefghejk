@@ -19,19 +19,6 @@ client.on('message' , message => {
 
 
 
-client.on('message', async msg => {
-      client.snek = require('snekfetch');
-    var p = "$"
-  if(msg.content.startsWith(p + "s")) {
-   let args = msg.content.split(' ').slice(1).join(' ');
-  if(!args) return args.missing(msg, 'No text added', this.help);
-  msg.channel.startTyping();
-  const searchMessage = await msg.channel.send('Painting...');
-  const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=clyde&text=${encodeURIComponent(args)}`);
-  msg.channel.send({file: { attachment:body.message, name: 'clyde.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
-};
-});
-
 
 
 
@@ -362,20 +349,19 @@ client.on('message', message => {
 .addField('     **→ للحصول علي رابط البوت ←**  ' ,' **$invite** ')
 .addField('     **→ معلومات البوت ←** ' , '**$bot-info**') 
 .addField('     **→ لمعلومات الروم←** ' , '**$ch**') 
-.addField('     **→الافتار ←** ' ,' ** $avatar**')
+.addField('     **→الافتار ←** ' ,' **$avatar**')
 .addField('     **→ تاريخ اليوم←** ' , '**$date**')
-.addField('     **→ معلومات السيرفر ← ** ' ,' **  $server-info  ** ')
+.addField('     **→ معلومات السيرفر ← ** ' ,' **$server-info** ')
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
 .addField('     **→ صأنع البوت ← ** ' ,' **  $bot-owner ** ')
-.addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **  $hypixel  ** ')
+.addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **$hypixel** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
-.addField('     **→ توب انفايت يوريك رابط الانفايت ← ** ' ,' **  $top  ** ')
-.addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' **   ** ')
-.addField('     **→ انجازات ماين كرافت ←  ** ' ,' **  $angaz ** ')
-.addField('     ** → كتابة كلام مثل كلايد بوت ←  ** ' ,' **  $s ** ')
-.addField('     ** → الزواج (مزحة) من الشخص ←  ** ' ,' **  $marry ** ')
+.addField('     **→ توب انفايت يوريك رابط الانفايت ← ** ' ,' **$top** ')
+.addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' **** ')
+.addField('     **→ انجازات ماين كرافت ←  ** ' ,' **$angaz** ')
+.addField('     ** → الزواج (مزحة) من الشخص ←  ** ' ,' **$marry** ')
 .addField('     ** → حجر ورق مقص ←  ** ' ,' **  $rps ** ')
-.addField('     **─════════════ ⦁{✯اوامر الادارة✯}⦁ ════════════─** ' ,' **   ** ')
+.addField('     **─════════════ ⦁{✯اوامر الادارة✯}⦁ ════════════─** ' ,' **** ')
 .addField('     ** → اععطاء العضو باند ←  ** ' ,' **  $ban ** ')
 .addField('     ** → مسح الشات ←  ** ' ,' **  $clear ** ')
 .addField('     ** → تقفيل الشات ←  ** ' ,' **  $cl ** ')
