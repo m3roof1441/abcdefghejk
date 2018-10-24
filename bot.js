@@ -382,6 +382,7 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
+.addField('     ** → للتصويت ←  ** ' ,' **  $vote ** ')
 
 
 .setColor('RANDOM')
@@ -1196,7 +1197,7 @@ client.on('guildMemberAdd', member => {
 client.on('message' , message => {
   var prefix = "$";
   if(message.author.bot) return;
-  if(message.content.startsWith(prefix + "send")) {
+  if(message.content.startsWith(prefix + "vote")) {
     let args = message.content.split(" ").slice(1);
 
 
