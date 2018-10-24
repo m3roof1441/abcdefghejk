@@ -356,6 +356,18 @@ client.on('message', message => {
             if (message.content.startsWith(prefix + "help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)   
+
+
+.addField(' ```  _____ ____     ____            
+ |_   _/ ___|   |  _ \ _ __ ___  
+   | || |  _    | |_) | '__/ _ \ 
+   | || |_| |   |  __/| | | (_) |
+   |_| \____|___|_|   |_|  \___/ 
+           |_____|               ```  ')
+
+
+
+
 .addField('     **─════════════ ⦁{✯الاوامر العامة✯}⦁ ════════════─** ' ,' **   ** ')
 .addField('     **→ معلومات حسابك ←** ' ,' **$id** ')
 .addField('     **→ سرعة استجابة البوت ←**  ' ,' **$ping** ')
