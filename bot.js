@@ -1189,24 +1189,30 @@ if(message.content.startsWith(prefix + 'ch')) {
 
 
 client.on('message', message => {
-    if (message.content === "$id") {
-    var year = message.createdAt.getFullYear()
-    var month = message.createdAt.getMonth()
-    var day = message.createdAt.getDate()
-         let embed = new Discord.RichEmbed()
-         .setAuthor(message.author.username, message.author.avatarURL)
-      .setThumbnail(message.author.avatarURL)
-        .addField("**اسمك:**",  '**[ ' + `${message.author.username}` + ' ]**')
-          .setThumbnail(message.author.avatarURL)
-                   .setFooter(`${message.author.username}`, 'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
-      .addField('تاق حسابك:', message.author.discriminator)
-      .addField("**تاريخ افتتاح حسابك:**", message.author.createdAt.getDate())
-        .addField("** تم افتتاح حسابك عام:**", message.createdAt.getFullYear())
-            .addField("** عدد الشهور منذ افتتاح حسابك:**", message.createdAt.getMonth())
-    
-      message.channel.send({embed});
-        }
-    });
+    if (message.content.startsWith("$id")) {
+                 if(!message.channel.guild) return message.reply('** This command only for servers**');
+ 
+                var mentionned = message.mentions.users.first();
+     var mentionavatar;
+       if(mentionned){
+           var mentionavatar = mentionned;
+       } else {
+           var mentionavatar = message.author;
+           
+       }
+    let embed = new Discord.RichEmbed()
+   .setColor("RANDOM")
+    .setThumbnail(`${mentionavatar.avatarURL}`)
+   .addField("الاسم:",`<@` + `${mentionavatar.id}` + `>`, true)
+   .addField('التاق:',"#" +  `${mentionavatar.discriminator}`, true)
+    .addField("ايدي:", "**[" + `${mentionavatar.id}` + "]**", true)
+   .addField("صنع في:", "**[" + `${mentionavatar.createdAt}` + "]**", true)
+      
+      
+   message.channel.sendEmbed(embed);
+   console.log('[id] Send By: ' + message.author.username)
+     }
+ });
 
 
 
