@@ -381,7 +381,9 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
-
+      msg.channel.send({embed:embed});
+	    .setAuthor(message.author.username)
+  .addField(" تـم الارسال :white_check_mark:")
 
 
 
