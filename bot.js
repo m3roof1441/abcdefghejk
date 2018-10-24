@@ -381,7 +381,7 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
-
+message.channel.send('تم الارسال في الخاص :white_check_mark:');
 
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
