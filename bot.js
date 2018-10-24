@@ -382,7 +382,6 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
-.addField('     ** → للتصويت ←  ** ' ,' **  $vote ** ')
 
 
 .setColor('RANDOM')
@@ -1194,42 +1193,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.on('message' , message => {
-  var prefix = "$";
-  if(message.author.bot) return;
-  if(message.content.startsWith(prefix + "vote")) {
-    let args = message.content.split(" ").slice(1);
 
-
-    let suggestmessage = args.join(" ").slice(22);
-    let suggestchannel = message.mentions.channels.first();
-
-    if (!suggestchannel) {
-        return message.reply("منشن الروم")
-    }
-
-    if (!suggestmessage) {
-        return message.reply("يرجأء كتبت رساله")
-    
-         
-    }
-     message.delete();
-suggestchannel.send("@everyone  `||` @here ");
-    let embed = new Discord.RichEmbed()
-        .addField("**", `${suggestmessage}`)
-        .setFooter(`by ${message.author.tag}`)
-        .setTimestamp()
-    suggestchannel.send({
-        embed
-    }).then(msg => {
-        msg.react("✅").then(r => msg.react("❎"))
-    });
-
-
-    message.reply(`تم ارسال رسالتك بنجاح.`).then(msg => msg.delete(1000));
-    return;
-}
-});
 
 
 
