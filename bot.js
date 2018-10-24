@@ -381,13 +381,6 @@ client.on('message', message => {
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
 .addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
-    title: "``✏️✅ تم الارسال ``",
-    color: 0x06DF00,
-    footer: {
-    
-    }
-    }}).then(msg => {msg.delete(3000)});
-
 
 
 .setColor('RANDOM')
