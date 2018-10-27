@@ -320,12 +320,17 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'كعبة') {      
+  if (msg.content === 'الكعبة') {      
     msg.react("🕋")
     msg.channel.send("🕋")
   }
 });
-
+client.on('message', msg => {
+  if (msg.content === 'اسرائيل') {      
+    msg.react("🚫")
+    msg.channel.send("الشيت يرجال")
+  }
+});
 
 
 
