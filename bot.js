@@ -364,7 +364,6 @@ client.on('message', message => {
 .addField('     ** → تقفيل الشات ←  ** ' ,' **  $cl ** ')
 .addField('     ** → فتح الشات ←  ** ' ,' **  $op ** ')
 .addField('     ** → برودكاست ←  ** ' ,' **  $bc ** ')
-.addField('     ** → قيف اواي ←  ** ' ,' **  $giveaway ** ')
 
 
 .setColor('RANDOM')
