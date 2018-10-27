@@ -1146,31 +1146,50 @@ if(message.content.startsWith(prefix + 'ch')) {
 
 
 
+	var moment = require("moment");
 client.on('message', message => {
-    if (message.content.startsWith("$id")) {
-                 if(!message.channel.guild) return message.reply('** This command only for servers**');
- 
-                var mentionned = message.mentions.users.first();
-     var mentionavatar;
-       if(mentionned){
-           var mentionavatar = mentionned;
-       } else {
-           var mentionavatar = message.author;
-           
-       }
-    let embed = new Discord.RichEmbed()
-   .setColor("RANDOM")
-    .setThumbnail(`${mentionavatar.avatarURL}`)
-   .addField("الاسم:",`<@` + `${mentionavatar.id}` + `>`, true)
-   .addField('التاق:',"#" +  `${mentionavatar.discriminator}`, true)
-    .addField("ايدي:", "**[" + `${mentionavatar.id}` + "]**", true)
-   .addField("صنع في:", "**[" + `${mentionavatar.createdAt}` + "]**", true)
-      
-      
-   message.channel.sendEmbed(embed);
-   console.log('[id] Send By: ' + message.author.username)
-     }
- });
+if(message.author.bot) return;
+  var prefix = '$';
+  
+  if (message.content.startsWith(prefix + "id")) {
+      message.react("??") 
+  if(!message.channel.guild) return message.reply(`**__بس بالسيرفرات__**`);
+   message.guild.fetchInvites().then(invs => {
+      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
+      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      var moment = require('moment');
+      var args = message.content.split(" ").slice(1);
+let user = message.mentions.users.first();
+var men = message.mentions.users.first();
+ var heg;
+ if(men) {
+     heg = men
+ } else {
+     heg = message.author
+ }
+var mentionned = message.mentions.members.first();
+  var h;
+ if(mentionned) {
+     h = mentionned
+ } else {
+     h = message.member
+ }
+moment.locale('ar-TN');
+      var id = new  Discord.RichEmbed()
+    .setColor("!0a0909")
+    .setAuthor(message.author.username, message.author.avatarURL) 
+.addField('**تاريخ دخولك الدسكورد**:', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
+.addField('**تاريخ دخولك السيرفر**:', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
+.addField("**اسمك**", `${message.author.username}`)
+.addField('**تاقك**', message.author.discriminator)
+.addField('**ايديك**', message.author.id)
+.addField('**سـيـرفـر**', `${member.guild.name}`,true)
+.setFooter("?معلوماتك?")  
+    message.channel.sendEmbed(id);
+})
+}       
+});
 
 
 
