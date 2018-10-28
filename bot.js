@@ -462,7 +462,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+  .addField("**تـم ارسـأل رابـط البـوت بالخـأص**")
      
      
      
@@ -925,6 +925,7 @@ client.on('guildMemberAdd', member => {
     .setColor('RANDOM')
     .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
 var channel =member.guild.channels.find('name', 'welcome')
+var channel =member.guild.channels.find('name', '✵-「الـــتـــرحـــيـــــب')
 if (!channel) return;
 channel.send({embed : embed});
 });
