@@ -916,7 +916,7 @@ var prefix = "$"
 
 
 
-
+	var moment = require("moment");
 client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
