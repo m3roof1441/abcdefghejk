@@ -921,6 +921,7 @@ client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
   .addField("***شكر لـ انضامك لسيرفرنا***" ,member.user.username )
+.addField('**تاريخ دخولك الدسكورد**:', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
     .setDescription('***بكل حب و احترام نتمنا ان تقضي معنا افضل الاوقات***')
     .setColor('RANDOM')
     .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
