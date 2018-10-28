@@ -736,19 +736,7 @@ reaction3.on("collect", r => {
   
   
 
-client.on('guildDelete', guild => {
-    guild.members.forEach(c => {
-    let embed = new Discord.RichEmbed()
-        .setTitle(`**${guild.name} تم حذف السيرفر**`)
-        .setThumbnail(guild.iconURL)
-        .addField('الاسم', guild.name, true)
-        .addField('الاونر', guild.owner.user.username, true)
-        .addField('صنع في', guild.createdAt.toLocaleString(), true)
-        .setColor("RANDOM");
 
-        c.sendEmbed(embed)
-    })
-});
 
 
   
@@ -932,8 +920,8 @@ var prefix = "$"
 client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
-  .addField("***شكرا الانضمامك الينا***" ,member.user.username )
-    .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
+  .addField("***شكر لـ انضامك لسيرفرنا***" ,member.user.username )
+    .setDescription('***بكل حب و احترام نتمنا ان تقضي معنا افضل الاوقات***')
     .setColor('RANDOM')
     .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
 var channel =member.guild.channels.find('name', 'welcome')
