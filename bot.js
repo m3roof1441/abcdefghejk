@@ -1182,8 +1182,7 @@ moment.locale('ar-TN');
 .addField('**تاريخ دخولك السيرفر**:', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
 .addField("**اسمك**", `${message.author.username}`)
 .addField('**تاقك**', message.author.discriminator)
-.addField('**ايديك**', message.author.id)
-.addField('**سـيـرفـر**', `${member.guild.name}`,true)ا
+.addField('**ايديك**', message.author.id)ا
 .setFooter("معلوماتك")  
     message.channel.sendEmbed(id);
 })
