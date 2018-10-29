@@ -33,7 +33,6 @@ var prefix = "$"
         .setFooter(message.author.username, message.author.avatarURL) 
   
       .setDescription(`**:battery: حالة اعضاء السيرفر**
-      
   **:green_heart: Online**  **[ ${message.guild.members.filter(m=>m.presence.status == 'online').size} ]**
   **:yellow_heart: Idle**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
   **:heart: DND**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
@@ -1184,9 +1183,8 @@ moment.locale('ar-TN');
 .addField("**اسمك**", `${message.author.username}`)
 .addField('**تاقك**', message.author.discriminator)
 .addField('**ايديك**', message.author.id)
-.addField('**سـيـرفـر**', `${member.guild.name}`,true)
-.addField('**الاونر**',`**${msg.guild.owner}**`,true)ا
-.setFooter("معلوماتك :id:")  
+.addField('**سـيـرفـر**', `${member.guild.name}`,true)ا
+.setFooter("معلوماتك 🆔")  
     message.channel.sendEmbed(id);
 })
 }       
