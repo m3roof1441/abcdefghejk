@@ -1261,10 +1261,7 @@ client.on("message", message => {
   
   });
 
-client.on('guildMemberAdd', member=> {
 
-    client.channels.get("501514924552617994").send(`***__ Welcome To Creative Fox Enjoy  ${member}___***`);
-    });
 
 
 client.login(process.env.BOT_TOKEN);
