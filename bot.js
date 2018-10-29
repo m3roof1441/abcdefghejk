@@ -1183,6 +1183,7 @@ moment.locale('ar-TN');
 .addField("**اسمك**", `${message.author.username}`)
 .addField('**تاقك**', message.author.discriminator)
 .addField('**ايديك**', message.author.id)
+ .addField('الـسـيـرفــر', message.guild.name)
 .setFooter("معلوماتك")  
     message.channel.sendEmbed(id);
 })
