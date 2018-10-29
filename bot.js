@@ -24,22 +24,26 @@ client.on('message' , message => {
 
 
 client.on('message', message => {
-              if (!message.channel.guild) return;
-      if(message.content =='$member')
-      var IzRo = new Discord.RichEmbed() 
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('ًںŒ·| Members info')  
-      .addBlankField(true)
-      .addField('ًں“—| Online',  
-      `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)  
-      .addField('ًں“•| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`) 
-      .addField('ًں“™| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`) 
-      .addField('ًں““| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`) 
-      .addField('â‍،| Server Members',`${message.guild.memberCount}`) 
-      message.channel.send(IzRo);
-    
-    });
+var prefix = "$"
+    if(message.content.startsWith (prefix  + 'members')) {
+        if(!message.channel.guild) return;
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+            .setThumbnail(message.author.avatarURL)
+        .setFooter(message.author.username, message.author.avatarURL) 
+  
+      .setDescription(`**:battery: حالة اعضاء السيرفر**
+      
+  **:green_heart: Online**  **[ ${message.guild.members.filter(m=>m.presence.status == 'online').size} ]**
+  **:yellow_heart: Idle**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
+  **:heart: DND**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
+  **:black_heart: Offline** **[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]** `)
+  
+          message.channel.send()
+  
+  message.channel.sendEmbed(embed)
+  }
+  });
 
 
 
