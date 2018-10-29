@@ -1184,7 +1184,7 @@ moment.locale('ar-TN');
 .addField('**تاقك**', message.author.discriminator)
 .addField('**ايديك**', message.author.id)
 .addField('**سـيـرفـر**', `${member.guild.name}`,true)ا
-.setFooter("معلوماتك 🆔")  
+.setFooter("معلوماتك")  
     message.channel.sendEmbed(id);
 })
 }       
