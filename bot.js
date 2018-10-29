@@ -1185,12 +1185,13 @@ moment.locale('ar-TN');
 .addField('**تاقك**', message.author.discriminator)
 .addField('**ايديك**', message.author.id)
 .addField('**سـيـرفـر**', `${member.guild.name}`,true)
-.setFooter("?معلوماتك?")  
+.addField('**الاونر**',`**${msg.guild.owner}**`,true)ا
+.setFooter("معلوماتك :id:")  
     message.channel.sendEmbed(id);
 })
 }       
 });
-
+ا
 
 
 client.on("message", message => {
