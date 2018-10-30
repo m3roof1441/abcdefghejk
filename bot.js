@@ -1284,7 +1284,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("**TG_Pro**")
+     .setFooter("TG_Pro")
                                                 
 
 message.channel.send(embed);
