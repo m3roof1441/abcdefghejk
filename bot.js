@@ -124,7 +124,7 @@ client.on('ready', () => {
 
 client.on('message', function(msg) {
     const prefix = '$'
-    if(msg.content.startsWith (prefix  + 'server-info')) {
+    if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -173,7 +173,7 @@ var prefix = "$";
 
 
 client.on('message', Sal => { // By : M3roof
-  if(Sal.content === '$bot-info') { //هنا تغير البرفيكس
+  if(Sal.content === '$bot') { //هنا تغير البرفيكس
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setThumbnail(client.user.avatarURL)
@@ -354,10 +354,10 @@ client.on('message', message => {
 .addField('     **→ معلومات حسابك ←** ' ,' **$id** ')
 .addField('     **→ سرعة استجابة البوت ←**  ' ,' **$ping** ')
 .addField('     **→ للحصول علي رابط البوت ←**  ' ,' **$invite** ')
-.addField('     **→ معلومات البوت ←** ' , '**$bot-info**') 
+.addField('     **→ معلومات البوت ←** ' , '**$bot**') 
 .addField('     **→الافتار ←** ' ,' **$avatar**')
 .addField('     **→ تاريخ اليوم←** ' , '**$date**')
-.addField('     **→ معلومات السيرفر ← ** ' ,' **$server-info** ')
+.addField('     **→ معلومات السيرفر ← ** ' ,' **$server** ')
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **$hypixel** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
