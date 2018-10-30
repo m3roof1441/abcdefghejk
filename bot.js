@@ -1107,6 +1107,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
   if (msg.content === '$ping') {
+    msg.react("⏸")
    msg.reply('✅ سرعة استجابة البوت ');
   }
 });
