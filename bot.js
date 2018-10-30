@@ -361,7 +361,8 @@ client.on('message', message => {
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **$hypixel** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
-.addField('     **→ توب انفايت يوريك رابط الانفايت ← ** ' ,' **$top** ')
+.addField('     **→ ارسال لرسالة لصاحب البوت ← ** ' ,' **$contact** ')
+.addField('     **→ دخول سيرفر السبورت ← ** ' ,' **$support** ')
 .addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' ** ** ')
 .addField('     **→ انجازات ماين كرافت ←  ** ' ,' **$angaz** ')
 .addField('     ** → الزواج (مزحة) من الشخص ←  ** ' ,' **$marry** ')
@@ -429,18 +430,15 @@ message.channel.send(image)
   client.on('message', message => {
 	  var prefix = "$"
     if (message.author.bot) return;
-     if (message.content === prefix + "bot-owner") {
+     if (message.content === prefix + "support") {
 
 
  message.author.sendMessage(`
  
 __TG_Pro__
 
-Created By : 󠀀Pro - ? M3roof#5981
 
-
-
-bot link : https://discordapp.com/oauth2/authorize?client_id=496501749926854657&scope=bot&permissions=388160
+Support link : https://discord.gg/twkucY
 `);
 
 message.channel.send('**تم الارسال في الخاص**');
@@ -1261,7 +1259,40 @@ client.on("message", message => {
   
   });
 
+client.on('message' , message => {
+var prefix = "$"
 
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+
+
+client.users.get("467782642549653514").send(
+    "\n" + "**" + "● السيرفر :" + "**" +
+    "\n" + "**" + "» " + message.guild.name + "**" +
+    "\n" + "**" + " ● المرسل : " + "**" +
+    "\n" + "**" + "» " + message.author.tag + "**" +
+    "\n" + "**" + " ● الرسالة : " + "**" +
+    "\n" + "**" + args + "**")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("**TG_Pro**")
+                                                
+
+message.channel.send(embed);
+
+
+}
+    
+});
 
 
 client.login(process.env.BOT_TOKEN);
