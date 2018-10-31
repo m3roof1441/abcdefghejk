@@ -61,7 +61,7 @@ var prefix = "$"
 
 
 client.on('message', message => {/// الفا كود | Emoko#0001
-     if (message.content === "$server-join") {
+     if (message.content === "$bot-join") {
          if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM") /// الفا كود | Emoko#0001
