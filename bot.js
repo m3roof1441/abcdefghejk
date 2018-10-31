@@ -1294,14 +1294,6 @@ message.channel.send(embed);
     
 });
 
-client.on('message', message => {
 
-    if (message.content === '$rip') {
-
-        const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
- 
-        message.channel.send(attachment);
-    }
-});
 
 client.login(process.env.BOT_TOKEN);
