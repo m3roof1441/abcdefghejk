@@ -1263,12 +1263,14 @@ client.on('message' , message => {
 var prefix = "$"
 
 if (message.author.bot) return;
-if (message.content.startsWith(prefix + "contact")) {
+if (message.content.startsWith("*contact")) {
 if (!message.channel.guild) return;
 
 
 
 let args = message.content.split(" ").slice(1).join(" ");
+    if(!args) return message.reply('**أكتب رسالتك !**').then(msg => msg.delete(10000))
+        message.delete();
 
 
 
@@ -1277,12 +1279,12 @@ client.users.get("467782642549653514").send(
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
     "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ● الرسالة : " + "**" +
+    "\n" + "**" + " ●الرسالة: " + "**" +
     "\n" + "**" + args + "**")
 
 let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
-     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setDescription('📬 تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
      .setFooter("TG_Pro")
                                                 
