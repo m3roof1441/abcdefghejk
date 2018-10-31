@@ -360,7 +360,6 @@ client.on('message', message => {
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **$hypixel** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
-.addField('     **→ ارسال لرسالة لصاحب البوت ← ** ' ,' **$contact** ')
 .addField('     **→ دخول سيرفر السبورت ← ** ' ,' **$support** ')
 .addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' ** ** ')
 .addField('     **→ انجازات ماين كرافت ←  ** ' ,' **$angaz** ')
@@ -1014,33 +1013,7 @@ client.on("ready", () => {
 
 
 
-client.on('message',message =>{
-    var prefix = "$";
-    if(message.content.startsWith(prefix + 'top')) {
-  message.guild.fetchInvites().then(i =>{
-  var invites = [];
-   
-  i.forEach(inv =>{
-    var [invs,i]=[{},null];
-     
-    if(inv.maxUses){
-        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
-    }else{
-        invs[inv.code] =+ inv.uses;
-    }
-        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
-   
-  });
-  var embed = new Discord.RichEmbed()
-  .setColor("#000000")
-  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
-  .setThumbnail("https://cdn.pg.sa/lFH0WqPxp2.png")
-           message.channel.send({ embed: embed });
-   
-  });
-   
-    }
-  });
+
 
 
 
@@ -1105,7 +1078,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
   if (msg.content === '$ping') {
-    msg.react("⏸")
+    msg.react("📶")
    msg.reply('✅ سرعة استجابة البوت ');
   }
 });
@@ -1257,44 +1230,7 @@ client.on("message", message => {
   
   };
   
-  });
 
-client.on('message' , message => {
-var prefix = "$"
-
-if (message.author.bot) return;
-if (message.content.startsWith("*contact")) {
-if (!message.channel.guild) return;
-
-
-
-let args = message.content.split(" ").slice(1).join(" ");
-    if(!args) return message.reply('**أكتب رسالتك !**').then(msg => msg.delete(10000))
-        message.delete();
-
-
-
-client.users.get("467782642549653514").send(
-    "\n" + "**" + "● السيرفر :" + "**" +
-    "\n" + "**" + "» " + message.guild.name + "**" +
-    "\n" + "**" + " ● المرسل : " + "**" +
-    "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ●الرسالة: " + "**" +
-    "\n" + "**" + args + "**")
-
-let embed = new Discord.RichEmbed()
-     .setAuthor(message.author.username, message.author.avatarURL)
-     .setDescription('📬 تم ارسال الرسالة الى صاحب البوت بنجاح')
-     .setThumbnail(message.author.avatarURL)
-     .setFooter("TG_Pro")
-                                                
-
-message.channel.send(embed);
-
-
-}
-    
-});
 
 
 client.on('message', message => {
