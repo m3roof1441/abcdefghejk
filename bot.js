@@ -999,7 +999,7 @@ client.on("ready", () => {
     client.guilds.get('501459185423220804').roles.find("name", "Rainbow").setColor("RANDOM");
     client.guilds.get('501459185423220804').roles.find("name", "♛ inviter ♛").setColor("RANDOM");
   };
-  setInterval(lol, 10000);
+  setInterval(lol, 1600;
 });
 
 
