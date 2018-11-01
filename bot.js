@@ -1119,7 +1119,6 @@ if(message.content.startsWith(prefix + 'ch')) {
 
 
 
-	var moment = require("moment");
 client.on('message', message => {
 if(message.author.bot) return;
   var prefix = '$';
