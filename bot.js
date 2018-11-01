@@ -3,11 +3,10 @@ const client = new Discord.Client();
 const moment = require("moment");
 const fs = require("fs");
 const prefix = "$";
-
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setGame(`!~[ Commands | $help ]~!`,`www.twitch.tv/v5bz`);
-});
+    client.user.setGame(`!~[ Commands | $help ]~!`,"http://twitch.tv/y04zgamer")
+    client.user.setStatus("dnd")
+ });
 
 client.on('message' , message => {
   var prefix = "$";
