@@ -6,6 +6,7 @@ const prefix = "$";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setGame(`!~[ Commands | $help ]~!`,`www.twitch.tv/v5bz`);
 });
 
 client.on('message' , message => {
@@ -79,21 +80,7 @@ client.on('message', message => {/// الفا كود | Emoko#0001
 
   
 
-client.on('ready', () => {
-     client.user.setActivity("!~[ Commands | $help ]~!",{type: 'WATCHING'})
 
-});
-
-
-
-
-
-
- client.on('ready', function(){
-    client.user.setStatus("dnd");
-    var ms = 1 ;
-
-});
 
 
 
