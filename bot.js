@@ -337,7 +337,12 @@ client.on('message', msg => {
     msg.channel.send("الشيت يرجال")
   }
 });
-
+client.on('message', msg => {
+  if (msg.content === 'السلام وعليكم') {      
+    msg.react("👋")
+    msg.channel.send("وعـلـيـكـم الـسـلام والـرحـمـه")
+  }
+});
 
 
 
