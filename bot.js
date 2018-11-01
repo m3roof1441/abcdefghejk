@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const moment = require("moment");
 const fs = require("fs");
+const prefix = "$";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
