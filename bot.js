@@ -840,7 +840,7 @@ client.on('message', message => {
     }
     if(message.content.startsWith(prefix + 'close')) {
             if(!message.member.hasPermission("ADMINISTRATOR")) return;
-        if(!message.channel.name.startsWith("ticket")) {
+        if(!message.channel.name.startsWith("𝑻𝑰𝑪𝑲𝑬𝑻")) {
             return;
         };  
                 let embed = new Discord.RichEmbed()
