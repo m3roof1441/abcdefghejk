@@ -381,7 +381,6 @@ client.on('message', message => {
 .addField('     **→ لمعرفة حالة الاعضاء ← ** ' ,' **  $members  ** ')
 .addField('     **→ لمعرفة ايدي شخص في هايبكسل ← ** ' ,' **$hypixel** ')
 .addField('     **→ للحصول علي ايدي اي شخص ← ** ' ,' **  $getid  ** ')
-.addField('     **→ دخول سيرفر السبورت ← ** ' ,' **$support** ')
 .addField('     **─════════════ ⦁{✯الالعاب✯}⦁ ════════════─** ' ,' ** ** ')
 .addField('     **→ انجازات ماين كرافت ←  ** ' ,' **$angaz** ')
 .addField('     ** → الزواج (مزحة) من الشخص ←  ** ' ,' **$marry** ')
@@ -447,24 +446,7 @@ message.channel.send(image)
 
 
 
-  client.on('message', message => {
-	  var prefix = "$"
-    if (message.author.bot) return;
-     if (message.content === prefix + "support") {
 
-
- message.author.sendMessage(`
- 
-__TG_Pro__
-
-
-Support link : https://discord.gg/twkucY
-`);
-
-message.channel.send('**تم الارسال في الخاص**');
-
-    }
-});
   
 
 
@@ -826,9 +808,9 @@ client.on('message', message => {
                     return message.channel.send('**Please make sure that `Support Team` role exists and it\'s not duplicated.**');
                 };
             if(!ticketsStation) {
-                message.guild.createChannel("TICKETS", "category");
+                message.guild.createChannel("Ticket", "category");
             };
-                message.guild.createChannel(`ticket-${message.author.username}`, "text").then(ticket => {
+                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻`, "text").then(ticket => {
                     message.delete()
                         message.channel.send(`تم انشاء تذكرتك. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
