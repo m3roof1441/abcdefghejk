@@ -21,7 +21,6 @@ client.on('message' , message => {
 
 
 
-const discord_token = "NDY3NzgyNjQyNTQ5NjUzNTE0.DrqeJA.-zFXoVe7G8M3GhgpHb5Qww3kVp4";
 client.login(discord_token);
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
